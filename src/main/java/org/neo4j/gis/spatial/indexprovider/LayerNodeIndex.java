@@ -258,7 +258,7 @@ public class LayerNodeIndex implements Index<Node>
                 @SuppressWarnings("unchecked")
 				List<Double> coords = (List<Double>) new JSONParser().parse( (String) params );
 
-                List<SpatialDatabaseRecord> res = GeoPipeline.startWithinSearch(
+                List<SpatialDatabaseRecord> res = GeoPipeline.startIntersectSearch(
                         layer,
                         layer.getGeometryFactory().toGeometry(
                                 new Envelope( coords.get( 0 ), coords.get( 1 ),
