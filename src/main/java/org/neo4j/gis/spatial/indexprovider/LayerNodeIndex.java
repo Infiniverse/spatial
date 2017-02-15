@@ -192,7 +192,7 @@ public class LayerNodeIndex implements Index<Node>
             try
             {
                 geometry = reader.read( (String)params);
-                List<SpatialDatabaseRecord> res = GeoPipeline.startWithinSearch(
+                List<SpatialDatabaseRecord> res = GeoPipeline.startIntersectSearch(
                         layer,geometry ).toSpatialDatabaseRecordList();
                 
                 results = new SpatialRecordHits(res, layer);
